@@ -27,30 +27,30 @@ Nous verrons les nouveautés essentielles et à notre portée de ce nouveau lang
   - Simplification du !DOCTYPE
   - Une syntaxe permissive
 - Nouvelles balises sémantiques
-  - <header> et <hgroup>
-  - <footer>
-  - <nav>
-  - <aside>
-  - <section>
-  - <article>
-  - <figure>
-- Nouvelles balises multimédia 7
-  - <audio> 7
-  - <video> 8
-- Des formulaires améliorés 9
-  - De nouveaux types de champs 9
-  - Range 10
-  - date, datetime, month, week, time 10
-  - search 10
-  - De nouveaux attributs intelligents 11
-  - Placeholder 11
-  - Autofocus 11
-  - Autocomplete 11
-  - Required 12
-- Des attributs puissants 12
-  - Draggable 12
-  - Contenteditable 12
-- Vers un HTML5 « transitionnel » ?  13
+  - header et hgroup
+  - footer
+  - nav
+  - aside
+  - section
+  - article
+  - figure
+- Nouvelles balises multimédia
+  - audio
+  - video
+- Des formulaires améliorés
+  - De nouveaux types de champs
+  - Range
+  - date, datetime, month, week, time
+  - search
+  - De nouveaux attributs intelligents
+  - Placeholder
+  - Autofocus
+  - Autocomplete
+  - Required
+- Des attributs puissants
+  - Draggable
+  - Contenteditable
+- Vers un HTML5 « transitionnel » ?
 
 ### HTML5 : LA RÉVÉLATION
 
