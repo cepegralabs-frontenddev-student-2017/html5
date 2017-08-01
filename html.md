@@ -1,8 +1,9 @@
 # html 5
-
 ## HypertText Markup Language
 
-### PRÉAMBULE
+### PRÉAMBULE <a id="preambule"></a>
+
+![front-end developper / webdesigner](/assets/front-end-dev.png)
 
 Faisons une petite incursion de l’autre côté du miroir de CSS, dans le langage de structure HTML.
 
@@ -21,12 +22,14 @@ Nous verrons les nouveautés essentielles et à notre portée de ce nouveau lang
 - Le stockage de données sur son ordinateur pour les exploiter hors ligne ;
 - La possibilité d’intervenir sur les éléments en les modifiant à la volée ou en les déplaçant (drag & drop), etc.
 
-### TABLE DES MATIÈRES
+![HTML5](/assets/HTML5_Logo_512.png)
 
-- Nouvelle grammaire
+### TABLE DES MATIÈRES
+- [Préambule](#preambule)
+- [Nouvelle grammaire](#nouvelle-grammaire)
   - Simplification du !DOCTYPE
   - Une syntaxe permissive
-- Nouvelles balises sémantiques
+- [Nouvelles balises sémantiques](#nouvelles-balises-semantiques)
   - header et hgroup
   - footer
   - nav
@@ -34,10 +37,10 @@ Nous verrons les nouveautés essentielles et à notre portée de ce nouveau lang
   - section
   - article
   - figure
-- Nouvelles balises multimédia
+- [Nouvelles balises multimédia](#nouvelles-balises-multimedia)
   - audio
   - video
-- Des formulaires améliorés
+- [Des formulaires améliorés](#des-formulaires-ameliores)
   - De nouveaux types de champs
   - Range
   - date, datetime, month, week, time
@@ -47,14 +50,14 @@ Nous verrons les nouveautés essentielles et à notre portée de ce nouveau lang
   - Autofocus
   - Autocomplete
   - Required
-- Des attributs puissants
+- [Des attributs puissants](des-attributs-puissants)
   - Draggable
   - Contenteditable
-- Vers un HTML5 « transitionnel » ?
+- [Vers un HTML5 «transitionnel»?](vers-un-html5-transitionnel)
 
 ### HTML5 : LA RÉVÉLATION
 
-### Nouvelle grammaire
+### Nouvelle grammaire <a id="nouvelle-grammaire"></a>
 
 Avec **HTML 5**, vous allez voir qu’écrire des pages devient de plus en plus facile, simple et à portée de tous.
 Si vous venez d’une application de l’XHTML 1.0 Strict, la bonne nouvelle c’est que ça ne va pas changer grand-chose pour vous : vous pourrez toujours coder comme précédemment, c’est juste qu’il y a maintenant une façon plus simple d’envisager les choses et qui sera également correcte !
@@ -90,7 +93,7 @@ Ce qui voudrait dire par exemple que le code suivant serait parfaitement valide 
 ```
 Mais bon ce n’est pas parce que c’est toléré qu’il faut forcément le faire ... Je vous invite quand même à garder une certaine rigueur dans la structure de vos pages web. Gardez donc le réflexe de bien écrire vos balises habituelles.
 
-### Nouvelles balises sémantiques
+### Nouvelles balises sémantiques <a id="nouvelles-balises-semantiques"></a>
 
 En plus de la mini-révolution au niveau de la simplification de l’écriture d’éléments tels que le Doctype ou des balises meta, HTML5 ouvre la voie à de nouvelles possibilités en terme de balisage sémantique.
 
@@ -137,7 +140,7 @@ Tandis que pour les autres navigateurs, il suffira d’indiquer ceci côté CSS 
 ```css
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 ```
-### Nouvelles balises multimédia
+### Nouvelles balises multimédia <a id="nouvelles-balises-multimedia"></a>
 En plus des nouveautés liées à la sémantique, HTML5 s’ouvre au multimédia grâce à deux nouvelles
 balises : ```<audio>``` et ```<video>```.
 
@@ -191,9 +194,9 @@ Pareil que pour ```<audio>```, les attributs ```controls``` et ```autoplay``` so
 - height *(pixels)*
 - loop
 - poster *(URL)*
-- preload	*(auto/metadata/none)*
-- src	*(URL)*
-- width	*(pixels)*
+ - preload*(auto/metadata/none)*
+ - src*(URL)*
+ - width*(pixels)*
 
 Un troisième attribut est intéressant dans ce cas-ci car il permet de pré-loader la vidéo en imaginant que l’utilisateur va la regarder par la suite, il s’agit de preload.
 
@@ -211,7 +214,7 @@ Si vous désirez que votre fichier vidéo soit visible sur un périphérique App
 
 Au niveau du skin des players, c’est la même chose que pour la balise <audio> mais avec la vidéo incrustée par-dessus et la possibilité sur certains navigateurs de passer la vidéo en full-screen (cool!).
 
-### Des formulaires améliorés
+### Des formulaires améliorés <a id="des-formulaires ameliores"></a>
 
 Dans cette jungle de nouveautés, même les formulaires ont été revus, corrigés et surtout améliorés. Pas mal de nouveautés voient le jour : de nouveaux types de champs, de nouvelles fonctions, des tests d’expressions régulières sur leur contenu textuel et bien d’autres choses encore …
 
@@ -256,7 +259,7 @@ Vous aurez remarqué que certains attributs sont là pour définir les propriét
 - ```min``` et ```max``` : définit la valeur minimale et maximale disponible sur la barre (il y a donc 50 états différents dans ce cas-ci).
 - ```value``` : l’endroit où se trouve le curseur par défaut (ici 0 donc au début de la ligne).
 - ```step``` : définit le nombre d’unités passées à chaque fois (une valeur de 2 ferait passer votre
-curseur de 0 à 2 puis 4, puis 6, etc.).
+  curseur de 0 à 2 puis 4, puis 6, etc.).
 
 #### date, datetime, month, week, time
 On en parlait un peu plus haut, des nouveaux types d’input pour préciser un « moment » ont vu le jour : ```date```, ```datetime```, ```month```, ```week``` et ```time```.
@@ -267,11 +270,11 @@ Voici un type d’input qui désigne donc un champ de recherche.
 
 Petit particularité, sous Chrome, une petite croix apparait quand vous commencez à écrire dans le champ pour pouvoir le réinitialiser :
 
-### De nouveaux attributs intelligents
+#### De nouveaux attributs intelligents
 
 Avec ces nouveaux types de champs débarquent aussi de nouveaux attributs « intelligents » qui vous vous permettre : de pré-écrire dans un champ, de mettre le focus automatique sur un champ présent dans une page, d’activer l’auto-complétion dans certains champs, de faire en sorte que certains champs soient obligatoires et d’autres pas…
 
-### Placeholder
+#### Placeholder
 Commençons avec ```placeholder``` qui va vous permettre de pré-remplir vos champs de type input par du texte qui va disparaître dès que vous commencerez à écrire dedans.
 
 Autre effet magique du champ marqué d’un ```placeholder```, si vous le videz à nouveau alors qu’il était rempli, il récupère la valeur indiquée initialement par le ```placeholder```, this is madness !
@@ -303,7 +306,7 @@ Pour le bout de code suivant, voici le rendu sur Chrome si vous ne remplissez pa
 </form>
 ```
 
-### Des attributs puissants
+### Des attributs puissants <a id="des-attributs-puissants"></a>
 
 Et ce n’est pas tout !
 
@@ -321,7 +324,7 @@ L’attribut ```contenteditable``` est reconnu depuis longtemps par IE et il ind
 
 Ce qui nous donne :
 
-### Vers un HTML5 « transitionnel » ?
+### Vers un HTML5 « transitionnel » ? <a id="vers-un-html5-transitionnel"></a>
 
 HTML5 marque le coup en simplifiant un bon lot de la rigueur qui nous avait été ordonnée par l’xhtml 1.0 Strict mais il ouvre aussi des portes concernant les nouvelles technologies contemporaines en décrivant mieux le contenu affiché sur une page web, en améliorant la gestion des périphériques et en favorisant l’intégration des applications web.
 
