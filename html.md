@@ -42,18 +42,18 @@ Nous verrons les nouveautés essentielles et à notre portée de ce nouveau lang
   - video
 - [Des formulaires améliorés](#des-formulaires-ameliores)
   - De nouveaux types de champs
-  - Range
-  - date, datetime, month, week, time
-  - search
+    - Range
+    - date, datetime, month, week, time
+    - search
   - De nouveaux attributs intelligents
-  - Placeholder
-  - Autofocus
-  - Autocomplete
-  - Required
-- [Des attributs puissants](des-attributs-puissants)
+    - Placeholder
+    - Autofocus
+    - Autocomplete
+    - Required
+- [Des attributs puissants](#des-attributs-puissants)
   - Draggable
   - Contenteditable
-- [Vers un HTML5 «transitionnel»?](vers-un-html5-transitionnel)
+- [Vers un HTML5 «transitionnel»?](#vers-un-html5-transitionnel)
 
 ### HTML5 : LA RÉVÉLATION
 
@@ -124,6 +124,8 @@ La balise ```<figure>```, selon le W3C est à employer combinée à ```<figcapti
 
 Voici une représentation graphique de ce que pourrait être une structure HTML5 de nos jours :
 
+![layout](/assets/layout.png)
+
 Cependant, il reste encore un petit problème : certains navigateurs n’affichent généralement pas ces éléments correctement (ils sont identifiés comme étant des éléments inline plutôt que block).
 
 Internet Explorer 8 est encore plus difficile puisque, rien que pour lui, il va falloir aussi ajouter une petite couche de javascript pour que tout cela fonctionne.
@@ -177,6 +179,7 @@ En fournissant un fichier .mp3 et un fichier .ogg, vous devriez pouvoir baliser 
 ```
 
 Chaque navigateur a donné un look différent à son player :
+![player audio](/assets/audio-player.jpg)
 
 #### video
 Même principe que pour la balise ```<audio>```, ici la balise ```<video>``` va vous permettre, à terme, de vous passer des plugins propriétaires pour placer une vidéo sur vos pages web.
@@ -194,9 +197,9 @@ Pareil que pour ```<audio>```, les attributs ```controls``` et ```autoplay``` so
 - height *(pixels)*
 - loop
 - poster *(URL)*
- - preload*(auto/metadata/none)*
- - src*(URL)*
- - width*(pixels)*
+- preload *(auto/metadata/none)*
+- src *(URL)*
+- width *(pixels)*
 
 Un troisième attribut est intéressant dans ce cas-ci car il permet de pré-loader la vidéo en imaginant que l’utilisateur va la regarder par la suite, il s’agit de preload.
 
@@ -214,7 +217,7 @@ Si vous désirez que votre fichier vidéo soit visible sur un périphérique App
 
 Au niveau du skin des players, c’est la même chose que pour la balise <audio> mais avec la vidéo incrustée par-dessus et la possibilité sur certains navigateurs de passer la vidéo en full-screen (cool!).
 
-### Des formulaires améliorés <a id="des-formulaires ameliores"></a>
+### Des formulaires améliorés <a id="des-formulaires-ameliores"></a>
 
 Dans cette jungle de nouveautés, même les formulaires ont été revus, corrigés et surtout améliorés. Pas mal de nouveautés voient le jour : de nouveaux types de champs, de nouvelles fonctions, des tests d’expressions régulières sur leur contenu textuel et bien d’autres choses encore …
 
@@ -243,7 +246,9 @@ input[type="email"]:invalid {background:#F03;}
 <input type="email" id="email">
 ```
 Un champ valide :
+![champ valide](/assets/input-vailde.png)
 Un champ non valide :
+![champ non valide](/assets/input-invalide.png)
 CSS3, associé à HTML5, ont donc réussi à comprendre que ce qui se trouvait dans le champ était valide dans le premier cas et non valide dans le second cas, car l’adresse mail n’est pas complète.
 
 #### Range
@@ -253,7 +258,7 @@ Au niveau syntaxique, il s’agit de nouveau de la balise ```<input>``` :
 <input type="range" min="0" max="50" value="0">
 ```
 Ce qui génère, sous chrome, un curseur de ce type :
-
+![curseur](/assets/input-slider.png)
 Vous aurez remarqué que certains attributs sont là pour définir les propriétés du curseur :
 
 - ```min``` et ```max``` : définit la valeur minimale et maximale disponible sur la barre (il y a donc 50 états différents dans ce cas-ci).
@@ -264,10 +269,10 @@ Vous aurez remarqué que certains attributs sont là pour définir les propriét
 #### date, datetime, month, week, time
 On en parlait un peu plus haut, des nouveaux types d’input pour préciser un « moment » ont vu le jour : ```date```, ```datetime```, ```month```, ```week``` et ```time```.
 Voici un exemple d’un input de type « date » sur chrome avec datepicker :
-
+![date picker](/assets/date-picker.png)
 #### search
 Voici un type d’input qui désigne donc un champ de recherche.
-
+![recherche](/assets/input-search.png)
 Petit particularité, sous Chrome, une petite croix apparait quand vous commencez à écrire dans le champ pour pouvoir le réinitialiser :
 
 #### De nouveaux attributs intelligents
@@ -283,7 +288,7 @@ Voici à quoi ressemblerait un champ email rempli avec un placeholder qui a pour
 ```HTML
 <input type="email" placeholder="Votre email">
 ```
-
+![placeholder](/assets/placeholder.png)
 #### Autofocus
 L’attribut ```autofocus``` place votre curseur directement dans un champ quand votre page est entièrement chargée.
 
@@ -292,6 +297,7 @@ Même code que ci-dessus mais avec un autofocus placé en attribut :
 ```HTML
 <input type="email" placeholder="Votre email" autofocus>
 ```
+![autofocus](/assets/autofocus.png)
 #### Autocomplete
 L’attribut ```autocomplete``` affiche une boite contenant les dernières entrées de formulaire que vous avez saisies et qui ont été conservées en mémoire sur votre machine. La valeur par défaut est ```on``` (activé), mais il est possible de masquer ces termes à l’aide de la valeur off (pour le champ de répétition de l’email, en général, c’est la technique qui est employée).
 
@@ -305,6 +311,7 @@ Pour le bout de code suivant, voici le rendu sur Chrome si vous ne remplissez pa
   <input type="submit" value="Envoyer">
 </form>
 ```
+![required](/assets/required.png)
 
 ### Des attributs puissants <a id="des-attributs-puissants"></a>
 
@@ -323,6 +330,7 @@ L’attribut ```contenteditable``` est reconnu depuis longtemps par IE et il ind
 ```
 
 Ce qui nous donne :
+![editable](/assets/editable.png)
 
 ### Vers un HTML5 « transitionnel » ? <a id="vers-un-html5-transitionnel"></a>
 
