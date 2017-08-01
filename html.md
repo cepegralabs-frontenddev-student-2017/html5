@@ -130,7 +130,8 @@ Concrètement, il suffira d’appeler un script externe dès le début de la pag
 ```html
 <!--[if lt IE 9]>
   <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->```
+<![endif]-->
+```
 
 Tandis que pour les autres navigateurs, il suffira d’indiquer ceci côté CSS :
 ```css
