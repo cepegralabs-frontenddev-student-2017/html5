@@ -155,12 +155,12 @@ Le tout combiné donnerait donc, pour une musique lancée dès le lancement de v
 <audio src="la-danse-des-canards.mp3" autoplay controls></audio>
 ```
 **attributs**
-autoplay
-controls
-loop
-muted
-preload
-src
+- autoplay
+- controls
+- loop
+- muted
+- preload *(autoplay/metadata/none)*
+- src *(URL)*
 
 Attention, au niveau des formats de fichiers à fournir, c’est un peu là que le bât blesse pour le moment : chaque navigateur a ses petits préférés et, de manière générale, tous sont tombés d’accord sauf … Internet Explorer !
 
@@ -184,16 +184,16 @@ Au niveau syntaxique, on reste dans la simplicité :
 <video src="the-dark-knight-rises.mp4"></video>
 ```
 
-Pareil que pour <audio>, les attributs ```controls``` et ```autoplay``` sont encore présents.
+Pareil que pour ```<audio>```, les attributs ```controls``` et ```autoplay``` sont encore présents.
 
 **attributs**
-autoplay
-height (pixels)
-loop
-poster (URL)
-preload	(auto/metadata/none)
-src	(URL)
-width	(pixels)
+- autoplay
+- height *(pixels)*
+- loop
+- poster *(URL)*
+- preload	*(auto/metadata/none)*
+- src	*(URL)*
+- width	*(pixels)*
 
 Un troisième attribut est intéressant dans ce cas-ci car il permet de pré-loader la vidéo en imaginant que l’utilisateur va la regarder par la suite, il s’agit de preload.
 
@@ -204,7 +204,9 @@ Au niveau des formats à utiliser, il vous faudra en prévoir 2 pour couvrir tou
   <source src=" the-dark-knight-rises.ogv" type="video/ogg">
 </video>
 ```
+
 **Attention**
+
 Si vous désirez que votre fichier vidéo soit visible sur un périphérique Apple (iPhone, iPod et iPad), il faut absolument commencer par le fichier .mp4 sinon le fichier ne sera pas lu du tout.
 
 Au niveau du skin des players, c’est la même chose que pour la balise <audio> mais avec la vidéo incrustée par-dessus et la possibilité sur certains navigateurs de passer la vidéo en full-screen (cool!).
@@ -328,7 +330,7 @@ En attendant, quelle position adopter par rapport à cette nouvelle spécificati
 
 - S’il s’agit seulement de se simplifier la vie en passant par une syntaxe HTML5 plus élémentaire (Doctype abrégé, etc.) et plus courte (plus besoin de type= …, plus besoin de / pour les balises auto-fermantes, etc.) alors le risque d’incompatibilité est carrément nul et rien ne vous empêche d’appliquer dès aujourd’hui ces nouveautés à vos pages Web.
 - Si vous désirez utiliser les nouvelles balises sémantiques (```<aside>```, ```<footer>```, ```<article>```, etc.) le risque est un peu plus grand : non seulement vous prenez le pari que vos visiteurs sur IE disposent tous de Javascript (ok ça c’est souvent le cas), mais vous pourriez altérer l’accessibilité à vos documents en optant pour un nouvel élément HTML5 qui n’est pas encore standardisé.
-- Les nouveaux champs de formulaires comptent parmi les éléments les moins reconnus par les navigateurs (mais ça progresse bien dans les versions récentes). Mais vous pouvez néanmoins les employer (```<input>``` avec les type ```email```, ```url```, ```search```, ```number``` ou ```date```) dès à présent et, s’ils ne sont pas compris, ils seront tout simplement traités comme des champs <input> classiques de type text.
+- Les nouveaux champs de formulaires comptent parmi les éléments les moins reconnus par les navigateurs (mais ça progresse bien dans les versions récentes). Mais vous pouvez néanmoins les employer (```<input>``` avec les type ```email```, ```url```, ```search```, ```number``` ou ```date```) dès à présent et, s’ils ne sont pas compris, ils seront tout simplement traités comme des champs ```<input>``` classiques de type text.
 - Pour ce qui est de l’utilisation des API multimédia comme ```<audio>```, ```<video>``` ou ```<canevas>```, certains sites les utilisent déjà comme Google ou Youtube par exemple. Mais tout ceci reste encore un peu instable au niveau des spécifications et surtout il faut prévoir beaucoup d’alternatives quand vous désirez mettre un média en ligne pour qu’il soit accessible par tous. Bref, méfiance !
 
 En plus des nouveautés que nous avons vues ensemble, notons encore ces points importants au niveau de la structure même de nos pages :
