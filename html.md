@@ -104,7 +104,7 @@ La balise ```<header>``` représente le bloc d’en-tête d’une section ou d�
 #### footer
 La balise ```<footer>``` regroupe les contenus du pied d’une section ou d’un document (pied de page) et est destiné à recueillir les informations concernant l’auteur, les mentions légales, etc. Comme pour la balise ```<header>```, vous pourriez retrouver plusieurs fois la balise <footer> sur la même page.
 
-#### na
+#### nav
 La balise ```<nav>``` regroupe les liens de navigation considérés comme majeurs ou jugés suffisamment pertinents. Ceuxi-ci peuvent être internes ou externes à la page.
 
 #### aside
@@ -209,91 +209,133 @@ Si vous désirez que votre fichier vidéo soit visible sur un périphérique App
 Au niveau du skin des players, c’est la même chose que pour la balise <audio> mais avec la vidéo incrustée par-dessus et la possibilité sur certains navigateurs de passer la vidéo en full-screen (cool!).
 
 ### Des formulaires améliorés
-Dans cette jungle de nouveautés, même les formulaires ont été revus, corrigés et surtout améliorés. Pas mal de nouveautés voient le jour : de nouveaux types de champs, de nouvelles fonctions, des
-tests d’expressions régulières sur leur contenu textuel et bien d’autres choses encore …
-De nouveaux types de champs
+
+Dans cette jungle de nouveautés, même les formulaires ont été revus, corrigés et surtout améliorés. Pas mal de nouveautés voient le jour : de nouveaux types de champs, de nouvelles fonctions, des tests d’expressions régulières sur leur contenu textuel et bien d’autres choses encore …
+
+#### De nouveaux types de champs
 HTML5 introduit de nouveaux types de champs de formulaires. Parmi ceux-ci :
-- email : le champ requiert un contenu au format d’adresse électronique.
-- url : le champ accueille des URL absolutes.
-- tel : le champ est destiné aux numéros de téléphone
-- number : le champ accepte uniquement les caractères numériques.
-- color : le champ est prévu pour les chaînes représentant une valeur de couleur.
-- range : le champ devient un curseur défilant, ou slider.
-- Search : le champ désigne un champ de recherche.
-- date, datetime, month, week et time : ces champs affichent des datepickers pour
-les unités qu’ils représentent.
-Ces différents types viennent s’ajouter aux valeurs classiques de HTML4 à savoir submit, image,
-text, radio, button, checkbox, hidden, file et password.
-Au niveau syntaxique, rien ne change dans l’écriture de l’input :
+- ```email```  : le champ requiert un contenu au format d’adresse électronique.
+- ```url```    : le champ accueille des URL absolutes.
+- ```tel```    : le champ est destiné aux numéros de téléphone
+- ```number``` : le champ accepte uniquement les caractères numériques.
+- ```color```  : le champ est prévu pour les chaînes représentant une valeur de couleur.
+- ```range```  : le champ devient un curseur défilant, ou slider.
+- ```Search``` : le champ désigne un champ de recherche.
+- ```date```, ```datetime```, ```month```, ```week``` et ```time``` : ces champs affichent des datepickers pour les unités qu’ils représentent.
+
+Ces différents types viennent s’ajouter aux valeurs classiques de HTML4 à savoir ```submit```, ```image```, ```text```, ```radio```, ```button```, ```checkbox```, ```hidden```, ```file``` et ```password```.
+Au niveau syntaxique, rien ne change dans l’écriture de l’```input``` :
+```html
 <input type="email" id="email">
-Chacun des types de champ obéit à une norme qui définit les valeurs acceptées ou rejetées. Ainsi, il
-est possible de vérifier quels éléments sont invalides à l’aide des sélecteurs CSS3 :valid et :invalid :
-CSS
+```
+Chacun des types de champ obéit à une norme qui définit les valeurs acceptées ou rejetées. Ainsi, il est possible de vérifier quels éléments sont invalides à l’aide des sélecteurs CSS3 :valid et :invalid :
+```CSS
 input[type="email"]:valid {background:yellowgreen;}
 input[type="email"]:invalid {background:#F03;}
-HTML
+```
+```HTML
 <input type="email" id="email">
+```
 Un champ valide :
 Un champ non valide :
-CSS3, associé à HTML5, ont donc réussi à comprendre que ce qui se trouvait dans le champ était
-valide dans le premier cas et non valide dans le second cas, car l’adresse mail n’est pas complète.
+CSS3, associé à HTML5, ont donc réussi à comprendre que ce qui se trouvait dans le champ était valide dans le premier cas et non valide dans le second cas, car l’adresse mail n’est pas complète.
 
-Range
+#### Range
 Les champs de type range se présentent sous la forme d’un curseur défilant, ou slider.
-Au niveau syntaxique, il s’agit de nouveau de la balise <input> :
+Au niveau syntaxique, il s’agit de nouveau de la balise ```<input>``` :
+```html
 <input type="range" min="0" max="50" value="0">
+```
 Ce qui génère, sous chrome, un curseur de ce type :
+
 Vous aurez remarqué que certains attributs sont là pour définir les propriétés du curseur :
-- min et max : définit la valeur minimale et maximale disponible sur la barre (il y a donc 50
-états différents dans ce cas-ci).
-- value : l’endroit où se trouve le curseur par défaut (ici 0 donc au début de la ligne).
-- step : définit le nombre d’unités passées à chaque fois (une valeur de 2 ferait passer votre
+
+- ```min``` et ```max``` : définit la valeur minimale et maximale disponible sur la barre (il y a donc 50 états différents dans ce cas-ci).
+- ```value``` : l’endroit où se trouve le curseur par défaut (ici 0 donc au début de la ligne).
+- ```step``` : définit le nombre d’unités passées à chaque fois (une valeur de 2 ferait passer votre
 curseur de 0 à 2 puis 4, puis 6, etc.).
 
-date, datetime, month, week, time
-On en parlait un peu plus haut, des nouveaux types d’input pour préciser un « moment » ont vu le
-jour : date, datetime, month, week et time.
+#### date, datetime, month, week, time
+On en parlait un peu plus haut, des nouveaux types d’input pour préciser un « moment » ont vu le jour : ```date```, ```datetime```, ```month```, ```week``` et ```time```.
 Voici un exemple d’un input de type « date » sur chrome avec datepicker :
 
-search
+#### search
 Voici un type d’input qui désigne donc un champ de recherche.
-Petit particularité, sous Chrome, une petite croix apparait quand vous commencez à écrire dans le
-champ pour pouvoir le réinitialiser :
 
-De nouveaux attributs intelligents
+Petit particularité, sous Chrome, une petite croix apparait quand vous commencez à écrire dans le champ pour pouvoir le réinitialiser :
+
+### De nouveaux attributs intelligents
+
 Avec ces nouveaux types de champs débarquent aussi de nouveaux attributs « intelligents » qui vous vous permettre : de pré-écrire dans un champ, de mettre le focus automatique sur un champ présent dans une page, d’activer l’auto-complétion dans certains champs, de faire en sorte que certains champs soient obligatoires et d’autres pas…
-Placeholder Commençons avec placeholder qui va vous permettre de pré-remplir vos champs de type input par du texte qui va disparaître dès que vous commencerez à écrire dedans. Autre effet magique du champ marqué d’un placeholder, si vous le videz à nouveau alors qu’il était rempli, il récupère la valeur indiquée initialement par le placeholder, this is madness !
-Voici à quoi ressemblerait un champ email rempli avec un placeholder qui a pour valeur « Votre email » : HTML <input type="email" placeholder="Votre email">
 
-Autofocus L’attribut autofocus place votre curseur directement dans un champ quand votre page est entièrement chargée.
-Même code que ci-dessus mais avec un autofocus placé en attribut : HTML <input type="email" placeholder="Votre email" autofocus>
+### Placeholder
+Commençons avec ```placeholder``` qui va vous permettre de pré-remplir vos champs de type input par du texte qui va disparaître dès que vous commencerez à écrire dedans.
 
-Autocomplete L’attribut autocomplete affiche une boite contenant les dernières entrées de formulaire que vous avez saisies et qui ont été conservées en mémoire sur votre machine. La valeur par défaut est on (activé), mais il est possible de masquer ces termes à l’aide de la valeur off (pour le champ de répétition de l’email, en général, c’est la technique qui est employée).
+Autre effet magique du champ marqué d’un ```placeholder```, si vous le videz à nouveau alors qu’il était rempli, il récupère la valeur indiquée initialement par le ```placeholder```, this is madness !
 
-Required
+Voici à quoi ressemblerait un champ email rempli avec un placeholder qui a pour valeur « Votre email » :
+```HTML
+<input type="email" placeholder="Votre email">
+```
+
+#### Autofocus
+L’attribut ```autofocus``` place votre curseur directement dans un champ quand votre page est entièrement chargée.
+
+Même code que ci-dessus mais avec un autofocus placé en attribut :
+
+```HTML
+<input type="email" placeholder="Votre email" autofocus>
+```
+#### Autocomplete
+L’attribut ```autocomplete``` affiche une boite contenant les dernières entrées de formulaire que vous avez saisies et qui ont été conservées en mémoire sur votre machine. La valeur par défaut est ```on``` (activé), mais il est possible de masquer ces termes à l’aide de la valeur off (pour le champ de répétition de l’email, en général, c’est la technique qui est employée).
+
+#### Required
 Les champs bénéficiant de l’attribut required doivent absolument être remplis lors de la soumission du formulaire, sans quoi la validation est refusée et le champ concerné est mis en évidence.
-Pour le bout de code suivant, voici le rendu sur Chrome si vous ne remplissez pas le champ requis : HTML <form> <input type="text" required> <input type="submit" value="Envoyer"> </form>
 
-Des attributs puissants
+Pour le bout de code suivant, voici le rendu sur Chrome si vous ne remplissez pas le champ requis :
+```HTML
+<form>
+  <input type="text" required>
+  <input type="submit" value="Envoyer">
+</form>
+```
+
+### Des attributs puissants
+
 Et ce n’est pas tout !
-HTML5 permet aussi une autre flopée de choses : rendre un élément du DOM draggable (déplaçable) au click, rendre du contenu éditable directement, utiliser la géolocalisation, faire des glisser-déposer, et bien d’autres choses. Nous allons seulement en voir deux ou trois car cet aspect-là d’HTML5 est encore relativement peu supporté et nécessite parfois des connaissances en javascript complémentaires.
-Draggable L’attribut draggable (ou draggable="true") donne à un élément de votre DOM la possibilité d’être « drag and drop » grâce à HTML5. Pour réussir l’effet complet, vous avez néanmoins besoin également d’une petite couche de javascript.
 
-Contenteditable L’attribut contenteditable est reconnu depuis longtemps par IE et il indique une zone éditable par l’utilisateur. Il peut en changer son contenu et manipuler ainsi les chaînes de caractères. <p contenteditable="true">Ha bein ça alors, ce texte est éditable !</p>
+HTML5 permet aussi une autre flopée de choses : rendre un élément du DOM draggable (déplaçable) au click, rendre du contenu éditable directement, utiliser la géolocalisation, faire des glisser-déposer, et bien d’autres choses. Nous allons seulement en voir deux ou trois car cet aspect-là d’HTML5 est encore relativement peu supporté et nécessite parfois des connaissances en javascript complémentaires.
+
+#### Draggable
+L’attribut ```draggable``` (ou ```draggable="true"```) donne à un élément de votre DOM la possibilité d’être « drag and drop » grâce à HTML5. Pour réussir l’effet complet, vous avez néanmoins besoin également d’une petite couche de javascript.
+
+#### Contenteditable
+L’attribut ```contenteditable``` est reconnu depuis longtemps par IE et il indique une zone éditable par l’utilisateur. Il peut en changer son contenu et manipuler ainsi les chaînes de caractères.
+
+```html
+<p contenteditable="true">Ha bein ça alors, ce texte est éditable !</p>
+```
+
 Ce qui nous donne :
 
-Vers un HTML5 « transitionnel » ?
+### Vers un HTML5 « transitionnel » ?
+
 HTML5 marque le coup en simplifiant un bon lot de la rigueur qui nous avait été ordonnée par l’xhtml 1.0 Strict mais il ouvre aussi des portes concernant les nouvelles technologies contemporaines en décrivant mieux le contenu affiché sur une page web, en améliorant la gestion des périphériques et en favorisant l’intégration des applications web.
+
 La démocratisation de ce langage facilitera dans un avenir « relativement » proche l’interopérabilité des documents HTML, mais aussi leur accessibilité universelle, voire leur référencement (grâce aux toutes nouvelles balises sémantiques).
 En attendant, quelle position adopter par rapport à cette nouvelle spécification qui n’est pas encore officielle ?
+
 - S’il s’agit seulement de se simplifier la vie en passant par une syntaxe HTML5 plus élémentaire (Doctype abrégé, etc.) et plus courte (plus besoin de type= …, plus besoin de / pour les balises auto-fermantes, etc.) alors le risque d’incompatibilité est carrément nul et rien ne vous empêche d’appliquer dès aujourd’hui ces nouveautés à vos pages Web.
-- Si vous désirez utiliser les nouvelles balises sémantiques (<aside>, <footer>, <article>, etc.) le risque est un peu plus grand : non seulement vous prenez le pari que vos visiteurs sur IE disposent tous de Javascript (ok ça c’est souvent le cas), mais vous pourriez altérer l’accessibilité à vos documents en optant pour un nouvel élément HTML5 qui n’est pas encore standardisé.
-- Les nouveaux champs de formulaires comptent parmi les éléments les moins reconnus par les navigateurs (mais ça progresse bien dans les versions récentes). Mais vous pouvez néanmoins les employer (<input> avec les type email, url, search, number ou date) dès à présent et, s’ils ne sont pas compris, ils seront tout simplement traités comme des champs <input> classiques de type text.
-- Pour ce qui est de l’utilisation des API multimédia comme <audio>, <video> ou <canevas>, certains sites les utilisent déjà comme Google ou Youtube par exemple. Mais tout ceci reste encore un peu instable au niveau des spécifications et surtout il faut prévoir beaucoup d’alternatives quand vous désirez mettre un média en ligne pour qu’il soit accessible par tous. Bref, méfiance !
+- Si vous désirez utiliser les nouvelles balises sémantiques (```<aside>```, ```<footer>```, ```<article>```, etc.) le risque est un peu plus grand : non seulement vous prenez le pari que vos visiteurs sur IE disposent tous de Javascript (ok ça c’est souvent le cas), mais vous pourriez altérer l’accessibilité à vos documents en optant pour un nouvel élément HTML5 qui n’est pas encore standardisé.
+- Les nouveaux champs de formulaires comptent parmi les éléments les moins reconnus par les navigateurs (mais ça progresse bien dans les versions récentes). Mais vous pouvez néanmoins les employer (```<input>``` avec les type ```email```, ```url```, ```search```, ```number``` ou ```date```) dès à présent et, s’ils ne sont pas compris, ils seront tout simplement traités comme des champs <input> classiques de type text.
+- Pour ce qui est de l’utilisation des API multimédia comme ```<audio>```, ```<video>``` ou ```<canevas>```, certains sites les utilisent déjà comme Google ou Youtube par exemple. Mais tout ceci reste encore un peu instable au niveau des spécifications et surtout il faut prévoir beaucoup d’alternatives quand vous désirez mettre un média en ligne pour qu’il soit accessible par tous. Bref, méfiance !
+
 En plus des nouveautés que nous avons vues ensemble, notons encore ces points importants au niveau de la structure même de nos pages :
+
 - Plusieurs éléments H1 sont applicables à différents niveaux de la hiérarchie.
-- Les élément de lien (<a>..</a>) peuvent maintenant contenir des éléments de type bloc.
-- Les éléments <body> et <head> ne sont plus nécessaires ! Mais je vous les recommande toujours vivement !
-- Les attributs ALT sur les balises <img> ont été remis en cause mais aucune décision n’a été prise les concernant à l’heure actuelle.
-- Utiliser les balises <audio>, <video> et <canvas> demande aux navigateurs un réel support sinon elles ne fonctionneront pas, c’est pourquoi chaque navigateur a un style de player différent et une façon plus ou moins complète d’intégrer ces nouvelles fonctionnalités.
-Restez donc encore prudents dans vos choix liés à l’utilisation d’HTML5 !
+- Les élément de lien (```<a>..</a>```) peuvent maintenant contenir des éléments de type bloc.
+- Les éléments ```<body>``` et ```<head>``` ne sont plus nécessaires ! Mais je vous les recommande toujours vivement !
+- Les attributs ALT sur les balises ```<img>``` ont été remis en cause mais aucune décision n’a été prise les concernant à l’heure actuelle.
+- Utiliser les balises ```<audio>```, ```<video>``` et ```<canvas>``` demande aux navigateurs un réel support sinon elles ne fonctionneront pas, c’est pourquoi chaque navigateur a un style de player différent et une façon plus ou moins complète d’intégrer ces nouvelles fonctionnalités.
+
+**Restez donc encore prudents dans vos choix liés à l’utilisation d’HTML5 !**
