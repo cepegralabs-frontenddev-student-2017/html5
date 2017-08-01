@@ -75,11 +75,11 @@ Mais ce n’est pas tout ! D’autres éléments du <head> de notre document ont
 #### Une syntaxe permissive
 En HTML 5, les règles syntaxiques sont de plus en plus permissives. Par exemple, on conserve la permissivité syntaxique de l’HTML 4 : majuscules autorisées pour les noms d’éléments et d’attributs, apostrophes simples ou doubles non obligatoires pour signaler les valeurs.
 
-Plus fort encore ! Les balises <p>, <li>, <optgroup>, <option>, <td>, <th> ne nécessitent pas de balise fermante pour être valides. Seule la version XHTML 5 oblige à fermer ces éléments.
+Plus fort encore! Les balises ```<p>```, ```<li>```, ```<optgroup>```, ```<option>```, ```<td>```, ```<th>``` ne nécessitent pas de balise fermante pour être valides. Seule la version XHTML 5 oblige à fermer ces éléments.
 
-Toujours plus fort ! Certains éléments ne nécessitent ni balise fermante ni balise ouvrante. C’est le cas de <html>, <head>, <body>. Cela signifierait que la présence même de ces éléments devient implicite.
+Toujours plus fort ! Certains éléments ne nécessitent ni balise fermante ni balise ouvrante. C’est le cas de ```<html>```, ```<head>```, ```<body>```. Cela signifierait que la présence même de ces éléments devient implicite.
 
-Notons finalement que l’attribut type (qu’on rentre principalement sur les balises <script> et <style>) devient superflu.
+Notons finalement que l’attribut type (qu’on rentre principalement sur les balises ```<script>``` et ```<style>```) devient superflu.
 Ce qui voudrait dire par exemple que le code suivant serait parfaitement valide :
 
 ```html
@@ -94,30 +94,30 @@ Mais bon ce n’est pas parce que c’est toléré qu’il faut forcément le fa
 
 En plus de la mini-révolution au niveau de la simplification de l’écriture d’éléments tels que le Doctype ou des balises meta, HTML5 ouvre la voie à de nouvelles possibilités en terme de balisage sémantique.
 
-De quoi enfin se passer de nos chères balises <div> ? Pas forcément mais en tous cas, vous verrez que vous en aurez nettement moins l’utilité. La balise <div> restant l’élément qu’il faut choisir si vous n’avez pas d’autre choix en termes de balise de type block et qu’aucune autre des balises déjà existantes mais aussi des nouvelles balises ci-dessous ne fait l’affaire.
+De quoi enfin se passer de nos chères balises ```<div>``` ? Pas forcément mais en tous cas, vous verrez que vous en aurez nettement moins l’utilité. La balise ```<div>``` restant l’élément qu’il faut choisir si vous n’avez pas d’autre choix en termes de balise de type block et qu’aucune autre des balises déjà existantes mais aussi des nouvelles balises ci-dessous ne fait l’affaire.
 
 Voici une liste des nouvelles balises sémantiques que vous allez pouvoir utiliser dès maintenant :
 
-#### <header>
-La balise <header> représente le bloc d’en-tête d’une section ou d’une page. Il remplace évidemment vos précédentes balises ```<div id="header">``` , mais ne doit pas forcément être considéré comme un élément unique dans votre document : toute section est susceptible de disposer de sa propre balise <header>.
+#### header
+La balise ```<header>``` représente le bloc d’en-tête d’une section ou d’une page. Il remplace évidemment vos précédentes balises ```<div id="header">``` , mais ne doit pas forcément être considéré comme un élément unique dans votre document : toute section est susceptible de disposer de sa propre balise <header>.
 
-#### <footer>
-La balise <footer> regroupe les contenus du pied d’une section ou d’un document (pied de page) et est destiné à recueillir les informations concernant l’auteur, les mentions légales, etc. Comme pour la balise <header>, vous pourriez retrouver plusieurs fois la balise <footer> sur la même page.
+#### footer
+La balise ```<footer>``` regroupe les contenus du pied d’une section ou d’un document (pied de page) et est destiné à recueillir les informations concernant l’auteur, les mentions légales, etc. Comme pour la balise ```<header>```, vous pourriez retrouver plusieurs fois la balise <footer> sur la même page.
 
-#### <nav>
-La balise <nav> regroupe les liens de navigation considérés comme majeurs ou jugés suffisamment pertinents. Ceuxi-ci peuvent être internes ou externes à la page.
+#### na
+La balise ```<nav>``` regroupe les liens de navigation considérés comme majeurs ou jugés suffisamment pertinents. Ceuxi-ci peuvent être internes ou externes à la page.
 
-#### <aside>
-La balise <aside> représente une portion de contenu contextuelle, directement ou indirectement liée aux éléments qui l’entourent, comme un bloc d’archives relatives au contenu précédent. Par extrapolation, cet élément désigne fréquemment les barres latérales classiques du document et peut remplacer l’ancien ```<div id="sidebar">```.
+#### aside
+La balise ```<aside>``` représente une portion de contenu contextuelle, directement ou indirectement liée aux éléments qui l’entourent, comme un bloc d’archives relatives au contenu précédent. Par extrapolation, cet élément désigne fréquemment les barres latérales classiques du document et peut remplacer l’ancien ```<div id="sidebar">```.
 
-#### <section>
-La balise <section> est là pour désigner un bloc générique de contenu ayant la même thématique. Cela pourrait concerner les chapitres, en-têtes et pieds de page, ou toute autre partie dans un document. L’élément <section> peut contenir des éléments de titre <h1> à <h6> pour avoir une meilleure définition de la structure du document.
+#### section
+La balise ```<section>``` est là pour désigner un bloc générique de contenu ayant la même thématique. Cela pourrait concerner les chapitres, en-têtes et pieds de page, ou toute autre partie dans un document. L’élément ```<section>``` peut contenir des éléments de titre ```<h1>``` à ```<h6>``` pour avoir une meilleure définition de la structure du document.
 
-#### <article>
-La balise <article> désigne une partie du document potentiellement autonome dans le sens où elle pourrait être reprise ou réutilisée, comme un article de journal, de blog ou de forum.
+#### article
+La balise ```<article>``` désigne une partie du document potentiellement autonome dans le sens où elle pourrait être reprise ou réutilisée, comme un article de journal, de blog ou de forum.
 
 #### <figure>
-La balise <figure>, selon le W3C est à employer combinée à <figcaption> pour structurer des illustrations, photos, diagrammes et portions de codes. <figcaption> désignera la légende de la figure.
+La balise ```<figure>```, selon le W3C est à employer combinée à ```<figcaption>``` pour structurer des illustrations, photos, diagrammes et portions de codes. ```<figcaption>``` désignera la légende de la figure.
 
 Voici une représentation graphique de ce que pourrait être une structure HTML5 de nos jours :
 
@@ -138,10 +138,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
 ```
 ### Nouvelles balises multimédia
 En plus des nouveautés liées à la sémantique, HTML5 s’ouvre au multimédia grâce à deux nouvelles
-balises : <audio> et <video>.
+balises : ```<audio>``` et ```<video>```.
 
-#### <audio>
-La balise <audio> permet la lecture d’un fichier audio, aux formats classiques, sans recourir à un
+#### audio
+La balise ```<audio>``` permet la lecture d’un fichier audio, aux formats classiques, sans recourir à un
 player extérieur ou propriétaire (flash ou javascript). Sa syntaxe est aussi courte qu’efficace :
 ```html
 <audio src="la-danse-des-canards.mp3"></audio>
@@ -153,14 +153,17 @@ Le tout combiné donnerait donc, pour une musique lancée dès le lancement de v
 ```html
 <audio src="la-danse-des-canards.mp3" autoplay controls></audio>
 ```
+**attributs**
+autoplay
+controls
+loop
+muted
+preload
+src
 
-Attention, au niveau des formats de fichiers à fournir, c’est un peu là que le bât blesse pour le
-moment : chaque navigateur a ses petits préférés et, de manière générale, tous sont tombés
-d’accord sauf … Internet Explorer !
+Attention, au niveau des formats de fichiers à fournir, c’est un peu là que le bât blesse pour le moment : chaque navigateur a ses petits préférés et, de manière générale, tous sont tombés d’accord sauf … Internet Explorer !
 
-En fournissant un fichier .mp3 et un fichier .ogg, vous devriez pouvoir baliser tous les navigateurs
-sauf IE6, 7 et 8 ! Au niveau syntaxique voici comment s’articule la syntaxe quand vous avez plusieurs
-fichiers à injecter :
+En fournissant un fichier .mp3 et un fichier .ogg, vous devriez pouvoir baliser tous les navigateurs sauf IE6, 7 et 8 ! Au niveau syntaxique voici comment s’articule la syntaxe quand vous avez plusieurs fichiers à injecter :
 
 ```html
 <audio>
@@ -171,9 +174,8 @@ fichiers à injecter :
 
 Chaque navigateur a donné un look différent à son player :
 
-### <video>
-Même principe que pour la balise <audio>, ici la balise <video> va vous permettre, à terme, de vous
-passer des plugins propriétaires pour placer une vidéo sur vos pages web.
+#### video
+Même principe que pour la balise ```<audio>```, ici la balise ```<video>``` va vous permettre, à terme, de vous passer des plugins propriétaires pour placer une vidéo sur vos pages web.
 
 Au niveau syntaxique, on reste dans la simplicité :
 
@@ -182,6 +184,15 @@ Au niveau syntaxique, on reste dans la simplicité :
 ```
 
 Pareil que pour <audio>, les attributs ```controls``` et ```autoplay``` sont encore présents.
+
+**attributs**
+autoplay
+height (pixels)
+loop
+poster (URL)
+preload	(auto/metadata/none)
+src	(URL)
+width	(pixels)
 
 Un troisième attribut est intéressant dans ce cas-ci car il permet de pré-loader la vidéo en imaginant que l’utilisateur va la regarder par la suite, il s’agit de preload.
 
@@ -193,15 +204,12 @@ Au niveau des formats à utiliser, il vous faudra en prévoir 2 pour couvrir tou
 </video>
 ```
 **Attention**
-Si vous désirez que votre fichier vidéo soit visible sur un périphérique Apple (iPhone, iPod et iPad), il
-faut absolument commencer par le fichier .mp4 sinon le fichier ne sera pas lu du tout.
+Si vous désirez que votre fichier vidéo soit visible sur un périphérique Apple (iPhone, iPod et iPad), il faut absolument commencer par le fichier .mp4 sinon le fichier ne sera pas lu du tout.
 
-Au niveau du skin des players, c’est la même chose que pour la balise <audio> mais avec la vidéo
-incrustée par-dessus et la possibilité sur certains navigateurs de passer la vidéo en full-screen (cool!).
+Au niveau du skin des players, c’est la même chose que pour la balise <audio> mais avec la vidéo incrustée par-dessus et la possibilité sur certains navigateurs de passer la vidéo en full-screen (cool!).
 
-Des formulaires améliorés
-Dans cette jungle de nouveautés, même les formulaires ont été revus, corrigés et surtout améliorés.
-Pas mal de nouveautés voient le jour : de nouveaux types de champs, de nouvelles fonctions, des
+### Des formulaires améliorés
+Dans cette jungle de nouveautés, même les formulaires ont été revus, corrigés et surtout améliorés. Pas mal de nouveautés voient le jour : de nouveaux types de champs, de nouvelles fonctions, des
 tests d’expressions régulières sur leur contenu textuel et bien d’autres choses encore …
 De nouveaux types de champs
 HTML5 introduit de nouveaux types de champs de formulaires. Parmi ceux-ci :
